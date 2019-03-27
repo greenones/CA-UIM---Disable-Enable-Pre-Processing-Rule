@@ -1,0 +1,18 @@
+msg = pds.create ()
+ 
+pds.putString(msg,"mode","filters")
+pds.putString(msg,"name","test")
+ 
+test = nimbus.request ("nas","get_ao_status",msg)
+filters = test["filters"]
+filter = filters["0"]
+active = "active"
+for k,v in pairs(filter ) do
+   if( k==active) then
+      if(v == 0) then
+         print("turning on")
+         action.filter("test",true,true)
+      else print("turning off") action.filter("test",false,true)
+      end
+   end
+end
