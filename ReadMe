@@ -1,0 +1,3 @@
+This script disables or enables a PreProcessing rule named "test".
+
+If the rule is active it deactivates it, if it's deactivated it will enable it.
